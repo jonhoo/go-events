@@ -1,18 +1,14 @@
-package events_test
+package events
 
-import (
-	"fmt"
-
-	events "."
-)
+import "fmt"
 
 // This example shows the simples example of how to listen for, and announce,
 // simple tagged events.
 func ExampleSignal() {
-	chn := events.Listen("example.hello")
+	chn := Listen("example.hello")
 
 	go func() {
-		events.Signal("example.hello")
+		Signal("example.hello")
 	}()
 
 	e := <-chn
@@ -24,11 +20,11 @@ func ExampleSignal() {
 
 // This example demonstrates how tag prefix matching works.
 func ExampleListen() {
-	chn := events.Listen("example.")
+	chn := Listen("example.")
 
 	go func() {
-		events.Signal("example.hello.world")
-		events.Signal("example.hello.aliens")
+		Signal("example.hello.world")
+		Signal("example.hello.aliens")
 	}()
 
 	i := 0
@@ -50,11 +46,11 @@ func ExampleListen() {
 // This example shows how to include extra information with an Event beyond the
 // Tag, and how this information can be extracted by the receiver.
 func ExampleAnnounce() {
-	chn := events.Listen("example.")
+	chn := Listen("example.")
 
 	go func() {
-		events.Announce(events.Event{"example.hello", "world"})
-		events.Announce(events.Event{"example.answer", 42})
+		Announce(Event{"example.hello", "world"})
+		Announce(Event{"example.answer", 42})
 	}()
 
 	i := 0
