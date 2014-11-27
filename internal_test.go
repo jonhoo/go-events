@@ -50,3 +50,9 @@ func TestDispatchNoMatch(t *testing.T) {
 	// This can probably not happen.
 	require.Empty(t, io, "dispatch should not dispatch event to non-matching listener")
 }
+
+func TestEventString(t *testing.T) {
+	// This is *only* here for test coverage of String()
+	e := Event{"example.hello.world", nil}
+	require.Contains(t, e.String(), "example.hello.world", "tag should appear in Event.String()")
+}
