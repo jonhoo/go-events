@@ -1,10 +1,11 @@
 package events_test
 
 import (
-	"events"
-	"testify/require"
 	"testing"
 	"time"
+
+	events "."
+	"github.com/stretchr/testify/require"
 )
 
 func TestEqualityDispatch(t *testing.T) {

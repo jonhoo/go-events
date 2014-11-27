@@ -1,8 +1,9 @@
 package events
 
 import (
-	"testify/require"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 func TestDispatchSenderPresent(t *testing.T) {

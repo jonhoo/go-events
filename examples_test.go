@@ -1,8 +1,9 @@
 package events_test
 
 import (
-	"events"
 	"fmt"
+
+	events "."
 )
 
 // This example shows the simples example of how to listen for, and announce,
