@@ -1,8 +1,8 @@
 language: go
 
 go:
-#  - 1.0 # not supported by testify
-  - 1.1
+#  - 1.0 # works, but not supported by testify
+#  - 1.1 # works, but doesn't do -coverprofile
   - 1.2
   - 1.3
   - tip
