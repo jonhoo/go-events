@@ -8,6 +8,8 @@ import (
 )
 
 func TestEqualityDispatch(t *testing.T) {
+	Verbosity = 3
+
 	c := Listen(".")
 	e := Event{".", nil}
 
@@ -19,6 +21,8 @@ func TestEqualityDispatch(t *testing.T) {
 }
 
 func TestNonEqualityDispatch(t *testing.T) {
+	Verbosity = 3
+
 	c := Listen("nomatch")
 	e := Event{".", nil}
 
@@ -29,6 +33,8 @@ func TestNonEqualityDispatch(t *testing.T) {
 }
 
 func TestClose(t *testing.T) {
+	Verbosity = 3
+
 	c := Listen(".")
 	e := Event{".", nil}
 	close(c)

@@ -7,6 +7,8 @@ import (
 )
 
 func TestDispatchSenderPresent(t *testing.T) {
+	Verbosity = 3
+
 	io := make(chan Event)
 	c := listener{".", io}
 	e := Event{".", nil}
@@ -18,6 +20,8 @@ func TestDispatchSenderPresent(t *testing.T) {
 }
 
 func TestDispatchSenderLeft(t *testing.T) {
+	Verbosity = 3
+
 	io := make(chan Event)
 	c := listener{".", io}
 	e := Event{".", nil}
@@ -32,6 +36,8 @@ func TestDispatchSenderLeft(t *testing.T) {
 }
 
 func TestDispatchNoMatch(t *testing.T) {
+	Verbosity = 3
+
 	io := make(chan Event)
 	c := listener{"nomatch", io}
 	e := Event{".", nil}

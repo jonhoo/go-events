@@ -5,6 +5,8 @@ import "fmt"
 // This example shows the simples example of how to listen for, and announce,
 // simple tagged events.
 func ExampleSignal() {
+	Verbosity = 0
+
 	chn := Listen("example.hello")
 
 	go func() {
@@ -20,6 +22,8 @@ func ExampleSignal() {
 
 // This example demonstrates how tag prefix matching works.
 func ExampleListen() {
+	Verbosity = 0
+
 	chn := Listen("example.")
 
 	go func() {
@@ -46,6 +50,8 @@ func ExampleListen() {
 // This example shows how to include extra information with an Event beyond the
 // Tag, and how this information can be extracted by the receiver.
 func ExampleAnnounce() {
+	Verbosity = 0
+
 	chn := Listen("example.")
 
 	go func() {
