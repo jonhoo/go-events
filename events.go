@@ -64,7 +64,7 @@ func dispatch(c listener, e Event) (present bool) {
 // package loader.
 func init() {
 	go func() {
-		var clients []listener = nil
+		var clients []listener
 		for {
 			select {
 			case c := <-listeners:
