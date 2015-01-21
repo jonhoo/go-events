@@ -1,4 +1,5 @@
 language: go
+sudo: false
 
 go:
 #  - 1.0 # works, but not supported by testify
